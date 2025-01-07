@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss You</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 5px rgb(10, 10, 10);
+        }
+
+        .message-box {
+            text-align: center;
+            background: rgba(68, 63, 63, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(238, 238, 238, 0.5);
+        }
+
+        .message-box h1 {
+            font-size: 3rem;
+            margin: 0 0 10px;
+        }
+
+        .message-box p {
+            font-size: 1.2rem;
+            margin: 0 0 20px;
+        }
+
+        .message-box button {
+            background: #000000;
+            color: rgb(255, 254, 254);
+            border: 1;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .message-box button:hover {
+            background: #ff0000;
+            color: rgb(255, 255, 255);
+        }
+
+        .custom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            color: black;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .modal-content p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content button {
+            background: #ffc801;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 10px;
+        }
+
+        .modal-content button:hover {
+            background: #000000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <h1>I'll Not Miss You!</h1>
+        <p><b>Dear Santa,</b></p>
+        <p>Take care of yourself and don't you dare forget me. If you do forget me, I hope something falls on your head, and then you might remember me.</p>
+        <p>Stay strong, and keep shining! 💖✨✨</p>
+        <b>
+            <button onclick="showMessage()">Click here for a Surprise 😉</button><br><br>
+            <button onclick="askIfMissing()">Do u ?</button>
+        </b>
+    </div>
+    <div class="custom-modal" id="customModal">
+        <div class="modal-content">
+            <p>So do you really miss me🥺🤧 ? </p>
+            <button onclick="handleResponse(true)">Yes</button>
+            <button onclick="handleResponse(false)">No</button>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("What surprise u want ahh one I gave already na stay happy with that. Santa 🎅😂✨");
+        }
+
+        function askIfMissing() {
+            const modal = document.getElementById("customModal");
+            modal.style.display = "flex";
+        }
+
+        function handleResponse(isYes) {
+            const modal = document.getElementById("customModal");
+            if (isYes) {
+                alert("Miss u moree Santa 🥺🎅🫂");
+                modal.style.display = "none";
+            } else {
+                alert("Yaa yaa y ull miss us now 😒 got ur other frds na 🤧🥺 don't talk to me go 🤧😒");
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
